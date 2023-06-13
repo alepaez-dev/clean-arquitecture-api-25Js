@@ -27,9 +27,19 @@ const list = () => {
   // Accion -> use case;
   const koders = Koder.find();
   return koders;
-} 
+}
 
-module.exports = { list }
+const getbyId = (id) => {
+  const koder = Koder.findById(id) // promesa
+  return koder;
+}
+
+const create = (data) => {
+  const koder = Koder.create(data);
+  return koder
+}
+
+module.exports = { list, getbyId, create }
 
 // Crear koder
 // Actualizar koder
