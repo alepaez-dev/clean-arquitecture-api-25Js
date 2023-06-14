@@ -15,9 +15,9 @@ const koderSchema = new mongoose.Schema({
   module: {
     type: String
   },
-  generation: {
+  generation: [{
     type: String
-  },
+  }],
   age: {
     type: Number,
     min: 18,
