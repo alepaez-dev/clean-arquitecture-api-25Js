@@ -16,15 +16,12 @@ const update = async (id, data) => {
 
   // Combino data nueva con la que ya esta
   for(let key in data) {
-    console.log("key", key)
     if(key !== "generation") {
       newMentor[key] = data[key]
     }
   }
 
-  console.log("data", data);
   if(data?.generation) {
-    console.log("pasaaaaaaa")
     // Hago todas mis generaciones falsas
     let newGenerations = newMentor.generations.map(generation => {
       return {
