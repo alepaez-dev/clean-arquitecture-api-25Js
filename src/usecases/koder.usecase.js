@@ -6,7 +6,6 @@ const Koder = require("../models/koder.model");
  * Obtener
  * Enlistar
  * Eliminar
- * 
  * method -> create
  * await Model.create(bfsdhjkb)
  * await Model.findById(bfsdhjkb)

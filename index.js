@@ -22,3 +22,32 @@ mongoose.connect(databaseURL)
 .catch((err) => {
   console.log("We have an error", err);
 })
+
+
+/**
+ * Practica
+ * Tiene que tener arquitectura limpia incluida.
+ * Mentores.
+ * 
+ * Mentor
+ *  - name
+ *  - age
+ *  - generations = [{
+ *    name: "25Js",
+ *    isActive: false
+ * },
+ * {
+ *    name: "27Js",
+ *    isActive: true
+ * }
+ * ]
+ * Create mentor
+ * List mentors
+ * Get mentor
+ * Update mentor
+ * Delete mentor
+ * 
+ * findByIdAndUpdate --> 
+ * findById
+ * findOne( id: id )
+ */
