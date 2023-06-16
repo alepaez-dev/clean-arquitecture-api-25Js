@@ -21,8 +21,6 @@ const auth = (request, response, next) => {
     const token = authorization.replace("Bearer ", "");
     // Verificar el token
     const isVerified = jwt.verify(token);
-    request.userId = isVerified.id
-    console.log("isVerified", isVerified);
     next()
   } catch (err) {
     response.status(401).json({
