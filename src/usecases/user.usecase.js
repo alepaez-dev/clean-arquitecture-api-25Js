@@ -12,12 +12,18 @@ const login = async (email, textPlainPassword) => {
   // Validar que un usuario con ese correo exista
   const user = await User.findOne({ email });
   console.log("Si existe un user con ese correo -->", user);
+  /**
+   * 404 ---> no va
+   * 403 ---> no va
+   * 401 --->
+   * 400 --->
+   */
   // Falla correo
-  if(!user) throw createError(400, "Invalid data");
+  if(!user) throw createError(401, "Invalid data");
 
   // Vemos si es la password
   const isValidPassword = await bcrypt.compare(textPlainPassword, user.password);
-  if(!isValidPassword) throw createError(400, "Invalid data");
+  if(!isValidPassword) throw createError(401, "Invalid data");
 
   // Si es la password y si es el correo regresamos token
   const token = jwt.sign({ email: user.email, id: user._id })
@@ -39,4 +45,14 @@ const create = async (data) => {
   return user
 } 
 
-module.exports = { create, login }
+const list = (filters) => {
+  const users = User.find(filters);
+  return users;
+}
+
+const get = async (id) => {
+  const user = await User.findById(id);
+  if(!user) throw createError(404, "User with that id not found");
+  return user;
+}
+module.exports = { create, login, list, get }

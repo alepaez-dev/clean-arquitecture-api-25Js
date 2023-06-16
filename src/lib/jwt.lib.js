@@ -7,6 +7,7 @@ const sign = (payload = {}) => {
   return jwt.sign(payload, SECRET_KEY, { expiresIn: "5h" });
 }
 
+// Verificar token
 const verify = (token) => {
   return jwt.verify(token, SECRET_KEY);
 }
