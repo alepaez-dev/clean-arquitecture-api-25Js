@@ -29,6 +29,20 @@ app.get("/", (request, response) => {
   response.json("Nuestra api sirve!!!");
 })
 
+
+/**
+ * Ejercicio
+ * Crear un middleware de autorizacion NUEVO donde autoriczedcmos por
+ * medio de JWT.
+ * Este middleware va a ser usado en Actualizar Usuario y Eliminar Usuario.
+ * Pero tenemos que verificar que el id que venga en el token sea el mismo
+ * que de los path params. Si no, lanzar un error.
+ * 
+ * path params ->> undefined
+ * 
+ * endpoint 
+ */
+
 // Exportar
 // common js 
 module.exports = app
